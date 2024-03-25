@@ -1,7 +1,7 @@
 #lang racket
 
 ;Primer punto
-#|(define (mayormenor)
+(define (mayormenor)
     (define edad (read))
     (cond 
         [(number? edad)
@@ -50,7 +50,7 @@ Un programa que determine si el numero es postivo, negativo o cero
     )
 )
 
-(mayor)|#
+(mayor)
 
 
  ;Crear un programa que pida un numero y determine si es impar o par
@@ -70,3 +70,56 @@ Un programa que determine si el numero es postivo, negativo o cero
  )
 
  (impar)
+
+ ; genero masculino femenino y apto o no apto 
+
+(define (genero) 
+    (display "Ingrese su genero ")
+    (define gender (read))
+    (define convertion (symbol->string gender))
+    (define minis (string-downcase convertion))
+    minis
+)
+
+(define (age)
+    (display "Ingrese su edad")
+    (define edad(read))
+    (cond
+        [(number? edad)edad]
+        [else (display "Ingrese un valor valido ")(age)]  
+    )
+        
+)
+
+(define (servicio)
+    (cond
+        [(string=? (genero) "masculino")
+            (cond
+                [(>= (age) 18)(display "Es apto ")]
+                [(<  (age) 18)(display "No es apto")]
+            )
+        ]
+        [(string=? (genero) "femenino")(display "No es obligatorio vaya trabaje ")]
+        [else (display "Ingrese entre genero masculino y femenino unicamente ")]
+    )
+)    
+
+(servicio)
+
+
+; decir si el salario del tipo es mayor o menor al minimo
+
+(define (sueldo sueldoUsuario)
+    (define salarioMinimo 1300000)
+    (cond
+        [(number? sueldoUsuario)
+            (cond
+                [(> sueldoUsuario salarioMinimo)(display "Su sueldo es mayor al minimo")]
+                [(< sueldoUsuario salarioMinimo)(display "Su sueldo es menor al minimo")]
+            )
+        ]
+        [else (display "Ingrese un valor numerico ")(sueldo (read))]
+    )
+)
+(display "Ingrese su sueldo ")
+(sueldo (read))
