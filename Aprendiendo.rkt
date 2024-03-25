@@ -1,7 +1,7 @@
 #lang racket
 
 ;Primer punto
-(define (mayormenor)
+#|(define (mayormenor)
     (define edad (read))
     (cond 
         [(number? edad)
@@ -123,3 +123,22 @@ Un programa que determine si el numero es postivo, negativo o cero
 )
 (display "Ingrese su sueldo ")
 (sueldo (read))
+|#
+
+;Crear un programa que pida al usuario un número y determine si es divisible entre 3 y 5 al mismo tiempo.
+
+(define (DivisorNumero)
+    (define n (read))
+    (cond
+        [(number? n)
+            (cond
+                [(=(remainder n 15)0)(display "El numero ")(display n)
+                (display " es divisible entre 3 y 5")]
+                [else (display "El numero ")(display n)(display " No es divisible entre 3 y 5 ")]
+            )
+        ]
+        [else (display "Ingrese un valor numerico ")(DivisorNumero)]
+    )
+)
+(display "Ingrese un valor ")
+(DivisorNumero)
