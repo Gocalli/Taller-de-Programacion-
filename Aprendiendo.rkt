@@ -1,7 +1,7 @@
 #lang racket
 
 ;Primer punto
-(define (mayormenor)
+#|(define (mayormenor)
     (define edad (read))
     (cond 
         [(number? edad)
@@ -50,7 +50,7 @@ Un programa que determine si el numero es postivo, negativo o cero
     )
 )
 
-(mayor)
+(mayor)|#
 
 
  ;Crear un programa que pida un numero y determine si es impar o par
@@ -60,8 +60,9 @@ Un programa que determine si el numero es postivo, negativo o cero
     (cond
         [(number? dato)
             (cond
-            [(remainder dato 2 )(display "Es valor ingresado es un numero par ")]
-            [(not (remainder dato 2))(display "El valor ingresado es un numero impar")]
+            [(=(remainder dato 2 )0)(display "El numero ")(display dato)(display " es par ")]
+            [else (display "El numero ")(display dato)(display " es impar")]
+            
             )
         ]
         [else (display "Ingrese un valor numerico ")(impar)]
