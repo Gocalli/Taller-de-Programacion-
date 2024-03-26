@@ -1,7 +1,7 @@
 #lang racket
 
 ;Primer punto
-(define (mayormenor)
+#|(define (mayormenor)
     (define edad (read))
     (cond 
         [(number? edad)
@@ -167,3 +167,29 @@ Un programa que determine si el numero es postivo, negativo o cero
  
  (display "Ingrese su nombre ")
  (Welcome)
+ |#
+
+
+;Crear un programa que pida al usuario dos números y determine si el segundo es múltiplo del primero.
+; Si es múltiplo, mostrar el resultado
+
+(define (Multiplo)
+    ((displayln "Ingrese el primer valor "))
+    (define p2 (read))
+    (displayln "Ingrese el valor del segundo termino")
+    (define p1 (read))
+    (define divisor (/ p2 p1))
+    (cond
+        [(number? p1)(number? p2)
+            (cond
+                [(=(remainder p2 p1)0)(display "P2 si es multiplo de p1 " )
+                (display "Y el resultado es ")(/ p2 p1)]
+                [(display "El valor de ")(display p2)(display " no es multiplo de ")
+                (display p1) ]
+            )
+        ]
+        [else (display "Ingrese valores correctos ")(Multiplo)]
+    )
+)
+
+(Multiplo)
