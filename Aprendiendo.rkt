@@ -123,7 +123,7 @@ Un programa que determine si el numero es postivo, negativo o cero
 )
 (display "Ingrese su sueldo ")
 (sueldo (read))
-|#
+
 
 ;Crear un programa que pida al usuario un número y determine si es divisible entre 3 y 5 al mismo tiempo.
 
@@ -142,3 +142,28 @@ Un programa que determine si el numero es postivo, negativo o cero
 )
 (display "Ingrese un valor ")
 (DivisorNumero)
+|#
+
+#|Crear un programa que solicite al usuario su nombre y su edad.
+ Si la edad ingresada es menor a 18 años, mostrar un mensaje de bienvenida
+  y mencionar que su contenido es apto solo para mayores de edad. Si la edad es mayor o igual a 18,
+ mostrar un mensaje de bienvenida sin restricciones.|#
+
+ (define (Welcome)
+    (define name (read))
+    (displayln "Ingrese su edad ")
+    (define Edad (read))
+    (cond
+        [(number? Edad)
+            (cond
+                [(< Edad 18)(display "Hola ")(display name)(display " este sitio es solo para +18 ")]
+                [(>= Edad 18)(display "Bienvenido ")(display name)
+                (display " , como se encuentra el dia de hoy")]
+            )
+        ]
+        [else (display "Ingrese los valores solicitados por favor ")(Welcome)]
+    )
+ )
+ 
+ (display "Ingrese su nombre ")
+ (Welcome)
