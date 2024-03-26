@@ -1,7 +1,7 @@
 #lang racket
 
 ;Primer punto
-#|(define (mayormenor)
+(define (mayormenor)
     (define edad (read))
     (cond 
         [(number? edad)
@@ -142,7 +142,7 @@ Un programa que determine si el numero es postivo, negativo o cero
 )
 (display "Ingrese un valor ")
 (DivisorNumero)
-|#
+
 
 #|Crear un programa que solicite al usuario su nombre y su edad.
  Si la edad ingresada es menor a 18 años, mostrar un mensaje de bienvenida
